@@ -1,0 +1,25 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    高雄交通即時案件
+  </h1>
+  <div>最新更新时间：{{this.RDate}}<div>
+  <agm-map [latitude]="SchoolLat" [longitude]="SchoolLng" [zoom]="zoomValue">
+    <agm-marker 
+    *ngFor="let m of SaveArray; let i = index"
+    (markerClick)="clickedMarker(m[4], i)"
+    [latitude]="m[1]"
+    [longitude]="m[2]"
+    >
+    
+  <agm-info-window>
+    <div><strong>{{m[3]}}</strong></div>
+    <div><strong>{{m[4]}}</strong></div>
+  </agm-info-window>
+  
+</agm-marker>
+  </agm-map>
+
+</div>
+
+
